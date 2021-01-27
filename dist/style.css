@@ -1,0 +1,24 @@
+.mainContainer {
+    margin-top: 3rem;
+}
+
+.card {
+    max-width: 18rem;
+}
+
+.one {
+    background-color: rgb(230, 230, 230);
+}
+
+.two {
+    background-color: rgb(199, 199, 199);
+}
+
+.three {
+    background-color: rgb(175, 175, 175);
+}
+
+.one, .two, .three {
+    height: 2.5rem;
+    width: 15rem;
+}

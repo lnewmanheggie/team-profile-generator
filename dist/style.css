@@ -4,6 +4,7 @@
 
 .card {
     max-width: 18rem;
+    margin: 1rem;
 }
 
 .one {
@@ -19,6 +20,13 @@
 }
 
 .one, .two, .three {
-    height: 2.5rem;
+    padding: 1rem;
     width: 15rem;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .subContainer {
+        padding: 0px;
+    }
 }

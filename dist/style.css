@@ -24,6 +24,10 @@
     width: 15rem;
 }
 
+a {
+    text-decoration: none !important; 
+}
+
 
 @media only screen and (max-width: 600px) {
     .subContainer {

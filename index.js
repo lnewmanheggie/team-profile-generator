@@ -7,6 +7,8 @@ const Intern = require('./lib/intern');
 
 const employeeArr = [];
 
+// functions to generate html file data here for each element in array
+
 const engineerFxn = () => {
     inquirer  
     .prompt(engineerQuestions)
@@ -40,7 +42,7 @@ const menuFunction = () => {
                 internFxn();
                 break;
             case 'Finish building my team':
-                console.log(employeeArr);
+                // Write HTML file here
                 return;
         }
     })

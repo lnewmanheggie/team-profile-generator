@@ -11,15 +11,19 @@ const employeeArr = [];
 const createCards = () => {
     let cards = ``;
     employeeArr.forEach(employee => {
-        console.log(cards)
         cards += employee.createCard();
     });
     const htmlFile = html({cards})
+    fs.mkdir('./dist', (err) => 
+        err ? console.error(err) : console.log('Distribution folder created!')
+    );
     fs.writeFile('./dist/index.html', htmlFile, (err) =>
-        err ? console.error(err) : console.log('Success!')
+        err ? console.error(err) : console.log('Html file created!')
+    );
+    fs.copyFile('./src/style.css', './dist/style.css', (err) =>
+        err ? console.error(err) : console.log('CSS file copied!')
     );
 }
-
 
 const engineerFxn = () => {
     inquirer  

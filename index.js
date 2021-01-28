@@ -14,17 +14,17 @@ const createCards = () => {
         console.log(cards)
         cards += employee.createCard();
     });
-    // console.log(cards);
-    console.log(html({cards}))
+    const htmlFile = html({cards})
+    fs.writeFile('./dist/index.html', htmlFile, (err) =>
+        err ? console.error(err) : console.log('Success!')
+    );
 }
 
-// functions to generate html file data here for each element in array
 
 const engineerFxn = () => {
     inquirer  
     .prompt(engineerQuestions)
     .then(({engineerName, engineerId, engineerEmail, github}) => {
-        console.log(engineerName, engineerId, engineerEmail, github)
         const en = new Engineer(engineerName, engineerId, engineerEmail, github);
         employeeArr.push(en);
         menuFunction();
@@ -54,7 +54,6 @@ const menuFunction = () => {
                 break;
             case 'Finish building my team':
                 createCards();
-                // Write HTML file here
                 return;
         }
     })

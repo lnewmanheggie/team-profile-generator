@@ -4,8 +4,19 @@ const { managerQuestions, menu, engineerQuestions, internQuestions } = require('
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
+const { html } = require('./src/helper')
 
 const employeeArr = [];
+
+const createCards = () => {
+    let cards = ``;
+    employeeArr.forEach(employee => {
+        console.log(cards)
+        cards += employee.createCard();
+    });
+    // console.log(cards);
+    console.log(html({cards}))
+}
 
 // functions to generate html file data here for each element in array
 
@@ -42,6 +53,7 @@ const menuFunction = () => {
                 internFxn();
                 break;
             case 'Finish building my team':
+                createCards();
                 // Write HTML file here
                 return;
         }

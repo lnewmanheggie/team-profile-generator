@@ -8,6 +8,15 @@ const { html } = require('./src/helper')
 
 const employeeArr = [];
 
+const createFiles = (htmlFile) => {
+    fs.writeFile('./dist/index.html', htmlFile, (err) =>
+    err ? console.error(err) : console.log('Html file created!')
+    );
+    fs.copyFile('./src/style.css', './dist/style.css', (err) =>
+        err ? console.error(err) : console.log('CSS file copied!')
+    );
+}
+
 const createCards = () => {
     let cards = ``;
     employeeArr.forEach(employee => {
@@ -15,14 +24,9 @@ const createCards = () => {
     });
     const htmlFile = html({cards})
     fs.mkdir('./dist', (err) => 
-        err ? console.error(err) : console.log('Distribution folder created!')
+        err ? console.error(err) : createFiles(htmlFile)
     );
-    fs.writeFile('./dist/index.html', htmlFile, (err) =>
-        err ? console.error(err) : console.log('Html file created!')
-    );
-    fs.copyFile('./src/style.css', './dist/style.css', (err) =>
-        err ? console.error(err) : console.log('CSS file copied!')
-    );
+
 }
 
 const engineerFxn = () => {

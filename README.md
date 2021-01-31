@@ -5,7 +5,7 @@
 ## Description
 Enter the names, roles, and other information about your team members from the command line and receive a dynamically created web dashboard.
 ## Installation
-Run `npm i` on your machine to install dependencies.
+Run `npm i` on your machine to install dependencies. Run `node index.js` to run the application.
 ## Tests
 Tests completed using Jest. Running `npm i` will install what is needed for the tests.
 ## License

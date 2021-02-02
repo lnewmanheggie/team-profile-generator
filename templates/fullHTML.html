@@ -1,5 +1,4 @@
-const html = ({cards}) =>
-`<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,11 +16,9 @@ const html = ({cards}) =>
     <div class="container is-full mainContainer">
         <div class="notification is-primary subContainer">
             <div class="is-flex is-flex-wrap-wrap is-justify-content-center">
-                ${cards}
+                {{ cards }}
             </div>
         </div>
     </div>
 </body>
-</html>`
-
-module.exports = ({html});
+</html>

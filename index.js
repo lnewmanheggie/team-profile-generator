@@ -4,25 +4,27 @@ const { managerQuestions, menu, engineerQuestions, internQuestions } = require('
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
-const { html } = require('./src/helper')
+const renderTemplate  = require('./templates/renderFullHTML');
+const render = require('./templates/renderHTML');
 
 const employeeArr = [];
 
 const createFiles = (htmlFile) => {
     fs.writeFile('./dist/index.html', htmlFile, (err) =>
     err ? console.error(err) : console.log('Html file created!')
-    );
+    ); 
     fs.copyFile('./src/style.css', './dist/style.css', (err) =>
         err ? console.error(err) : console.log('CSS file copied!')
     );
 }
 
 const createCards = () => {
-    let cards = ``;
-    employeeArr.forEach(employee => {
-        cards += employee.createCard();
-    });
-    const htmlFile = html({cards})
+    // let cards = ``;
+    // employeeArr.forEach(employee => {
+    //     cards += employee.createCard();
+    // });
+    const cards = render(employeeArr);
+    const htmlFile = renderTemplate(cards)
     fs.mkdir('./dist', (err) => 
         err ? console.error(err) : createFiles(htmlFile)
     );
